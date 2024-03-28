@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Goalie_StatisticsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GoalieListView()
+                .modelContainer(for: [Goalie.self, GoalieUpdate.self])
         }
     }
 }

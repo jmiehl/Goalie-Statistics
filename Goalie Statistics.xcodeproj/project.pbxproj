@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		CF0C9FB52BB592E400AFE45E /* Goalie_StatisticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FB42BB592E400AFE45E /* Goalie_StatisticsApp.swift */; };
-		CF0C9FB72BB592E400AFE45E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FB62BB592E400AFE45E /* ContentView.swift */; };
+		CF0C9FB72BB592E400AFE45E /* GoalieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FB62BB592E400AFE45E /* GoalieListView.swift */; };
 		CF0C9FB92BB592E500AFE45E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF0C9FB82BB592E500AFE45E /* Assets.xcassets */; };
 		CF0C9FBC2BB592E500AFE45E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF0C9FBB2BB592E500AFE45E /* Preview Assets.xcassets */; };
+		CF0C9FC42BB5938B00AFE45E /* Goalie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FC32BB5938B00AFE45E /* Goalie.swift */; };
+		CF0C9FC62BB594EE00AFE45E /* GoalieUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FC52BB594EE00AFE45E /* GoalieUpdate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CF0C9FB12BB592E400AFE45E /* Goalie Statistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Goalie Statistics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0C9FB42BB592E400AFE45E /* Goalie_StatisticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goalie_StatisticsApp.swift; sourceTree = "<group>"; };
-		CF0C9FB62BB592E400AFE45E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF0C9FB62BB592E400AFE45E /* GoalieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalieListView.swift; sourceTree = "<group>"; };
 		CF0C9FB82BB592E500AFE45E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF0C9FBB2BB592E500AFE45E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CF0C9FC32BB5938B00AFE45E /* Goalie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goalie.swift; sourceTree = "<group>"; };
+		CF0C9FC52BB594EE00AFE45E /* GoalieUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalieUpdate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				CF0C9FB42BB592E400AFE45E /* Goalie_StatisticsApp.swift */,
-				CF0C9FB62BB592E400AFE45E /* ContentView.swift */,
+				CF0C9FB62BB592E400AFE45E /* GoalieListView.swift */,
+				CF0C9FC22BB5934600AFE45E /* Models */,
 				CF0C9FB82BB592E500AFE45E /* Assets.xcassets */,
 				CF0C9FBA2BB592E500AFE45E /* Preview Content */,
 			);
@@ -65,6 +70,15 @@
 				CF0C9FBB2BB592E500AFE45E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CF0C9FC22BB5934600AFE45E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF0C9FC32BB5938B00AFE45E /* Goalie.swift */,
+				CF0C9FC52BB594EE00AFE45E /* GoalieUpdate.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF0C9FB72BB592E400AFE45E /* ContentView.swift in Sources */,
+				CF0C9FB72BB592E400AFE45E /* GoalieListView.swift in Sources */,
+				CF0C9FC62BB594EE00AFE45E /* GoalieUpdate.swift in Sources */,
 				CF0C9FB52BB592E400AFE45E /* Goalie_StatisticsApp.swift in Sources */,
+				CF0C9FC42BB5938B00AFE45E /* Goalie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
