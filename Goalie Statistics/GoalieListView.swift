@@ -14,6 +14,7 @@ struct GoalieListView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+                .font(.screenHeading)
         }
         .padding()
     }
