@@ -14,6 +14,8 @@
 		CF0C9FC42BB5938B00AFE45E /* Goalie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FC32BB5938B00AFE45E /* Goalie.swift */; };
 		CF0C9FC62BB594EE00AFE45E /* GoalieUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FC52BB594EE00AFE45E /* GoalieUpdate.swift */; };
 		CF0C9FC92BB6245900AFE45E /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FC82BB6245900AFE45E /* FontHelper.swift */; };
+		CF0C9FCB2BB774BF00AFE45E /* StatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FCA2BB774BF00AFE45E /* StatBubbleView.swift */; };
+		CF0C9FCF2BB7795C00AFE45E /* GoalieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FCE2BB7795C00AFE45E /* GoalieCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		CF0C9FC32BB5938B00AFE45E /* Goalie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goalie.swift; sourceTree = "<group>"; };
 		CF0C9FC52BB594EE00AFE45E /* GoalieUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalieUpdate.swift; sourceTree = "<group>"; };
 		CF0C9FC82BB6245900AFE45E /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		CF0C9FCA2BB774BF00AFE45E /* StatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBubbleView.swift; sourceTree = "<group>"; };
+		CF0C9FCE2BB7795C00AFE45E /* GoalieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalieCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				CF0C9FB42BB592E400AFE45E /* Goalie_StatisticsApp.swift */,
-				CF0C9FB62BB592E400AFE45E /* GoalieListView.swift */,
+				CF0C9FCC2BB774CC00AFE45E /* Views */,
 				CF0C9FC22BB5934600AFE45E /* Models */,
 				CF0C9FC72BB6243B00AFE45E /* Helpers */,
 				CF0C9FB82BB592E500AFE45E /* Assets.xcassets */,
@@ -90,6 +94,16 @@
 				CF0C9FC82BB6245900AFE45E /* FontHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CF0C9FCC2BB774CC00AFE45E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF0C9FB62BB592E400AFE45E /* GoalieListView.swift */,
+				CF0C9FCE2BB7795C00AFE45E /* GoalieCardView.swift */,
+				CF0C9FCA2BB774BF00AFE45E /* StatBubbleView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +180,9 @@
 				CF0C9FC92BB6245900AFE45E /* FontHelper.swift in Sources */,
 				CF0C9FC62BB594EE00AFE45E /* GoalieUpdate.swift in Sources */,
 				CF0C9FB52BB592E400AFE45E /* Goalie_StatisticsApp.swift in Sources */,
+				CF0C9FCB2BB774BF00AFE45E /* StatBubbleView.swift in Sources */,
 				CF0C9FC42BB5938B00AFE45E /* Goalie.swift in Sources */,
+				CF0C9FCF2BB7795C00AFE45E /* GoalieCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
