@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct GoalieCardView: View {
+    
+    // creates an instance of goalie
+    var goalie: Goalie
+    
     var body: some View {
         ZStack (alignment: .leading) {
             RoundedRectangle(cornerRadius: 15)
                 .opacity(0.7)
             VStack (alignment: .leading, spacing: 10
             ) {
-                Text("Ethan Miehl")
+                // display the goalie name from Goalie
+                Text(goalie.name)
                     .font(Font.bigHeadline)
                     .foregroundStyle(.white)
                 
@@ -41,5 +46,5 @@ struct GoalieCardView: View {
 }
 
 #Preview {
-    GoalieCardView()
+    GoalieCardView(goalie: Goalie())
 }

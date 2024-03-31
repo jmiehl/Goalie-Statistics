@@ -6,8 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct GoalieListView: View {
+    
+    
+    // variable to create a new goalie instance
+    @State private var newGoalie: Goalie?
+    
+    //query the saved goalies
+    @Query private var goalie: [Goalie]
+    
     var body: some View {
         ZStack {
             // designs the app background within a ZStack
@@ -21,28 +30,25 @@ struct GoalieListView: View {
                 
                 ScrollView (showsIndicators: false) {
                     VStack (alignment: .leading, spacing: 26){
-                        GoalieCardView()
-                        GoalieCardView()
-                        GoalieCardView()
-                        GoalieCardView()
-                        GoalieCardView()
-                        GoalieCardView()
-                       
+                        ForEach (goalie) {g in
+                            GoalieCardView(goalie: g)
+                        }
                     }
                 }
                 
-              
+                
             }
             .padding()
             
             VStack{
-            
+                
                 Spacer()
                 
                 HStack{
                     
                     Button(action: {
-                        // Todo
+                        // create new goalie
+                        self.newGoalie = Goalie()
                     }, label: {
                         ZStack {
                             Circle()
@@ -54,16 +60,19 @@ struct GoalieListView: View {
                             
                         }
                     })
-                 Spacer()
+                    Spacer()
                 }
             }
             .padding(.leading)
         }
+        .sheet(item: $newGoalie) { goalie in
+            AddGoalieView(goalie: goalie)
+                .presentationDetents([.fraction(0.20)])
             
+        }
     }
-        
 }
+    #Preview {
+       GoalieListView()
+    }
 
-#Preview {
-    GoalieListView()
-}

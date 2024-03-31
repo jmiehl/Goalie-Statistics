@@ -16,6 +16,7 @@
 		CF0C9FC92BB6245900AFE45E /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FC82BB6245900AFE45E /* FontHelper.swift */; };
 		CF0C9FCB2BB774BF00AFE45E /* StatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FCA2BB774BF00AFE45E /* StatBubbleView.swift */; };
 		CF0C9FCF2BB7795C00AFE45E /* GoalieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FCE2BB7795C00AFE45E /* GoalieCardView.swift */; };
+		CF0C9FD12BB846CF00AFE45E /* AddGoalieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FD02BB846CF00AFE45E /* AddGoalieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		CF0C9FC82BB6245900AFE45E /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		CF0C9FCA2BB774BF00AFE45E /* StatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBubbleView.swift; sourceTree = "<group>"; };
 		CF0C9FCE2BB7795C00AFE45E /* GoalieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalieCardView.swift; sourceTree = "<group>"; };
+		CF0C9FD02BB846CF00AFE45E /* AddGoalieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				CF0C9FB62BB592E400AFE45E /* GoalieListView.swift */,
+				CF0C9FD02BB846CF00AFE45E /* AddGoalieView.swift */,
 				CF0C9FCE2BB7795C00AFE45E /* GoalieCardView.swift */,
 				CF0C9FCA2BB774BF00AFE45E /* StatBubbleView.swift */,
 			);
@@ -179,6 +182,7 @@
 				CF0C9FB72BB592E400AFE45E /* GoalieListView.swift in Sources */,
 				CF0C9FC92BB6245900AFE45E /* FontHelper.swift in Sources */,
 				CF0C9FC62BB594EE00AFE45E /* GoalieUpdate.swift in Sources */,
+				CF0C9FD12BB846CF00AFE45E /* AddGoalieView.swift in Sources */,
 				CF0C9FB52BB592E400AFE45E /* Goalie_StatisticsApp.swift in Sources */,
 				CF0C9FCB2BB774BF00AFE45E /* StatBubbleView.swift in Sources */,
 				CF0C9FC42BB5938B00AFE45E /* Goalie.swift in Sources */,
