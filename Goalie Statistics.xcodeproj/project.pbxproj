@@ -17,6 +17,7 @@
 		CF0C9FCB2BB774BF00AFE45E /* StatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FCA2BB774BF00AFE45E /* StatBubbleView.swift */; };
 		CF0C9FCF2BB7795C00AFE45E /* GoalieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FCE2BB7795C00AFE45E /* GoalieCardView.swift */; };
 		CF0C9FD12BB846CF00AFE45E /* AddGoalieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FD02BB846CF00AFE45E /* AddGoalieView.swift */; };
+		CF0C9FD62BB9E8D300AFE45E /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FD52BB9E8D300AFE45E /* GameDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		CF0C9FCA2BB774BF00AFE45E /* StatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBubbleView.swift; sourceTree = "<group>"; };
 		CF0C9FCE2BB7795C00AFE45E /* GoalieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalieCardView.swift; sourceTree = "<group>"; };
 		CF0C9FD02BB846CF00AFE45E /* AddGoalieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalieView.swift; sourceTree = "<group>"; };
+		CF0C9FD52BB9E8D300AFE45E /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +107,17 @@
 				CF0C9FD02BB846CF00AFE45E /* AddGoalieView.swift */,
 				CF0C9FCE2BB7795C00AFE45E /* GoalieCardView.swift */,
 				CF0C9FCA2BB774BF00AFE45E /* StatBubbleView.swift */,
+				CF0C9FD42BB9E87E00AFE45E /* AddGameDetailView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CF0C9FD42BB9E87E00AFE45E /* AddGameDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				CF0C9FD52BB9E8D300AFE45E /* GameDetailView.swift */,
+			);
+			path = AddGameDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				CF0C9FD12BB846CF00AFE45E /* AddGoalieView.swift in Sources */,
 				CF0C9FB52BB592E400AFE45E /* Goalie_StatisticsApp.swift in Sources */,
 				CF0C9FCB2BB774BF00AFE45E /* StatBubbleView.swift in Sources */,
+				CF0C9FD62BB9E8D300AFE45E /* GameDetailView.swift in Sources */,
 				CF0C9FC42BB5938B00AFE45E /* Goalie.swift in Sources */,
 				CF0C9FCF2BB7795C00AFE45E /* GoalieCardView.swift in Sources */,
 			);

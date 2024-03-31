@@ -18,57 +18,68 @@ struct GoalieListView: View {
     @Query private var goalie: [Goalie]
     
     var body: some View {
-        ZStack {
-            // designs the app background within a ZStack
-            LinearGradient(colors: [Color.navy, Color.skyBlue], startPoint: .topLeading, endPoint: .bottomTrailing)
-                .ignoresSafeArea()
+        
+        NavigationStack{
             
-            VStack (alignment: .leading) {
-                Text("Goalies Statistics")
-                    .font(Font.screenHeading)
-                    .foregroundStyle(.white)
+            ZStack {
+                // designs the app background within a ZStack
+                LinearGradient(colors: [Color.navy, Color.skyBlue], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea()
                 
-                ScrollView (showsIndicators: false) {
-                    VStack (alignment: .leading, spacing: 26){
-                        ForEach (goalie) {g in
-                            GoalieCardView(goalie: g)
+                VStack (alignment: .leading) {
+                    Text("Goalies Statistics")
+                        .font(Font.screenHeading)
+                        .foregroundStyle(.white)
+                    
+                    ScrollView (showsIndicators: false) {
+                        VStack (alignment: .leading, spacing: 26){
+                            
+                            ForEach (goalie) {g in
+                                
+                                NavigationLink {
+                                    GameDetailView(goalie: g)
+                                } label: {
+                                    GoalieCardView(goalie: g)
+                                }
+                                .buttonStyle(.plain)
+                            }
                         }
                     }
-                }
-                
-                
-            }
-            .padding()
-            
-            VStack{
-                
-                Spacer()
-                
-                HStack{
                     
-                    Button(action: {
-                        // create new goalie
-                        self.newGoalie = Goalie()
-                    }, label: {
-                        ZStack {
-                            Circle()
-                                .frame(width: 65)
-                                .foregroundColor(.black)
-                            Text("Add Goalie")
-                                .font(Font.featuredText)
-                                .foregroundStyle(.white)
-                            
-                        }
-                    })
-                    Spacer()
+                    
                 }
+                .padding()
+                
+                VStack{
+                    
+                    Spacer()
+                    
+                    HStack{
+                        
+                        Button(action: {
+                            // create new goalie
+                            self.newGoalie = Goalie()
+                        }, label: {
+                            ZStack {
+                                Circle()
+                                    .frame(width: 65)
+                                    .foregroundColor(.black)
+                                Text("Add Goalie")
+                                    .font(Font.featuredText)
+                                    .foregroundStyle(.white)
+                                
+                            }
+                        })
+                        Spacer()
+                    }
+                }
+                .padding(.leading)
             }
-            .padding(.leading)
-        }
-        .sheet(item: $newGoalie) { goalie in
-            AddGoalieView(goalie: goalie)
-                .presentationDetents([.fraction(0.20)])
-            
+            .sheet(item: $newGoalie) { goalie in
+                AddGoalieView(goalie: goalie)
+                    .presentationDetents([.fraction(0.20)])
+                
+            }
         }
     }
 }
