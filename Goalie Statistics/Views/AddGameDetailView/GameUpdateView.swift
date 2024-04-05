@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GameUpdateView: View {
+    var game: GoalieUpdate
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -17,11 +19,11 @@ struct GameUpdateView: View {
             
             VStack(alignment: .leading, spacing: 10){
                 HStack{
-                    Text("Saturday, September 15, 2023")
+                    Text(DateHelper.gameUpdateDate(inputDate: game.date))
                         .padding(7)
                         
                     Spacer()
-                    Text("vs. Team Philadelphia")
+                    Text(game.opponent)
                         .padding(7)
                         
                 }
@@ -29,13 +31,13 @@ struct GameUpdateView: View {
                 
                 HStack (alignment: .center, spacing: 13) {
                     Spacer()
-                    StatBubbleView(title: "Shots", stat: "30", startColor: Color("Navy"), endColor: Color("Sky Blue"))
+                    StatBubbleView(title: "Shots", stat: String(game.shots), startColor: Color("Navy"), endColor: Color("Sky Blue"))
                     
-                    StatBubbleView(title: "Saves", stat: "28", startColor: Color("Navy"), endColor: Color("Sky Blue"))
+                    StatBubbleView(title: "Saves", stat: String(game.saves), startColor: Color("Navy"), endColor: Color("Sky Blue"))
                     
-                    StatBubbleView(title: "Save %", stat: "93.3", startColor: Color("Navy"), endColor: Color("Sky Blue"))
+                    StatBubbleView(title: "Save %", stat: String(game.savePercentage), startColor: Color("Navy"), endColor: Color("Sky Blue"))
                     
-                    StatBubbleView(title: "Goals", stat: "2", startColor: Color("Navy"), endColor: Color("Sky Blue"))
+                    StatBubbleView(title: "Goals", stat: String(game.goals), startColor: Color("Navy"), endColor: Color("Sky Blue"))
                     Spacer()
                     
                 }
@@ -51,6 +53,4 @@ struct GameUpdateView: View {
     }
 }
 
-#Preview {
-    GameUpdateView()
-}
+

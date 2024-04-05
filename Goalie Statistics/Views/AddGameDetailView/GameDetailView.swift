@@ -9,11 +9,14 @@ import SwiftUI
 
 struct GameDetailView: View {
     
+    @State private var goalieUpdate: GoalieUpdate?
+    
     //Environment instance to dismiss screen when hitting back button
     @Environment(\.dismiss) private var dismiss
     
     // add instance of the goalie to access the goalie information
     var goalie: Goalie
+    
     
     var body: some View {
         
@@ -61,12 +64,9 @@ struct GameDetailView: View {
                 // GAMES
                 ScrollView (showsIndicators: false) {
                     VStack {
-                       GameUpdateView()
-                        GameUpdateView()
-                        GameUpdateView()
-                        GameUpdateView()
-                        GameUpdateView()
-                        GameUpdateView()
+                        ForEach(goalie.games) {game in
+                        GameUpdateView(game: game)
+                        }
                         
                     }
                     .padding()
@@ -80,6 +80,9 @@ struct GameDetailView: View {
                 HStack{
                     Button(action: {
                         //Todo: add game
+                        
+                        self.goalieUpdate = GoalieUpdate()
+                        
                     }, label: {
                         ZStack{
                             Circle()
@@ -116,6 +119,11 @@ struct GameDetailView: View {
             
         }
         .navigationBarBackButtonHidden(true)
+        .sheet(item: $goalieUpdate) { goalieUpdate in
+            AddGameView(goalie: goalie, goalieUpdate: goalieUpdate)
+                .presentationDetents([.fraction(0.50)])
+            
+        }
         
     }
 }

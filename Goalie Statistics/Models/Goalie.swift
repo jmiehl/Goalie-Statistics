@@ -16,7 +16,10 @@ class Goalie: Identifiable {
     var gameDate = Date()
     var games: [GoalieUpdate] = [GoalieUpdate]()
     @Relationship(deleteRule: .cascade, inverse: \GoalieUpdate.goalie)
-    
+    var shots = 0
+    var saves = 0
+    var goals = 0
+    var savePercentage = 0.0
     
     
     init() {
