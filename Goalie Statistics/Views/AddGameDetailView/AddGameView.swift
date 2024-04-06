@@ -17,12 +17,14 @@ struct AddGameView: View {
     // creates an instance of a Goalie
     var goalie: Goalie
     var goalieUpdate: GoalieUpdate
+    var isEditMode: Bool
     
-    @State var opponent: String = ""
-    @State var shots = 0
-    @State var goals = 0
-    @State var saves = 0
-    @State var savePercentage = 0.0
+    @State private var opponent: String = ""
+    @State private var shots = 0
+    @State private var goals = 0
+    @State private var saves = 0
+    @State private var savePercentage = 0.0
+    @State private var showConfirmation = false
     
     
     
@@ -34,7 +36,7 @@ struct AddGameView: View {
             
             VStack (alignment: .leading){
                 // sets the title of the display
-                Text("New Game")
+                Text(isEditMode ? "Edit Game" : "New Game")
                     .font(.bigHeadline)
                     .foregroundStyle(.white)
                 
@@ -220,22 +222,32 @@ struct AddGameView: View {
                 }
                 HStack (alignment: .center) {
                     Spacer()
-                    Button("Save") {
-                        //save project
+                    Button(isEditMode ? "Save" : "Add Game") {
+                        
                         goalieUpdate.opponent = opponent
                         goalieUpdate.shots = shots
                         goalieUpdate.goals = goals
                         goalieUpdate.saves = saves
                         goalieUpdate.savePercentage = savePercentage
                         
-                        goalie.games.append(goalieUpdate)
-                        
+                        if !isEditMode {
+                            goalie.games.insert(goalieUpdate, at: 0)
+                        }
+
                         dismiss()
                     }
                     
                     .buttonStyle(.borderedProminent)
                     .tint(.blue)
                     Spacer()
+                    if isEditMode {
+                        Button("Delete") {
+                            //show confirmation dialog
+                            showConfirmation = true
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.red)
+                    }
                 }
                 
                
@@ -244,6 +256,21 @@ struct AddGameView: View {
             .padding(.top)
             
            
+        }
+        .confirmationDialog("Are you sure you want to delete this game?", isPresented: $showConfirmation) {
+            Button("Yes, delete the game") {
+                goalie.games.removeAll {u in
+                    u.id == goalieUpdate.id
+                }
+                dismiss()
+            }
+        }
+        .onAppear{
+            opponent = goalieUpdate.opponent
+            shots = goalieUpdate.shots
+            saves = goalieUpdate.saves
+            goals = goalieUpdate.goals
+            savePercentage = goalieUpdate.savePercentage
         }
     }
     func calculatedSaves() {

@@ -35,7 +35,7 @@ struct GameUpdateView: View {
                     
                     StatBubbleView(title: "Saves", stat: String(game.saves), startColor: Color("Navy"), endColor: Color("Sky Blue"))
                     
-                    StatBubbleView(title: "Save %", stat: String(game.savePercentage), startColor: Color("Navy"), endColor: Color("Sky Blue"))
+                    StatBubbleView(title: "Save %", stat: "\(String(format: "%.1f", game.savePercentage * 100))", startColor: Color("Navy"), endColor: Color("Sky Blue"))
                     
                     StatBubbleView(title: "Goals", stat: String(game.goals), startColor: Color("Navy"), endColor: Color("Sky Blue"))
                     Spacer()

@@ -64,8 +64,14 @@ struct GameDetailView: View {
                 // GAMES
                 ScrollView (showsIndicators: false) {
                     VStack {
-                        ForEach(goalie.games) {game in
+                        ForEach(goalie.games.sorted(by: { u1, u2 in u1.date > u2.date}))
+                        {game in
                         GameUpdateView(game: game)
+                                .onTapGesture {
+                                }
+                                .onLongPressGesture{
+                                    self.goalieUpdate = game
+                                }
                         }
                         
                     }
@@ -120,7 +126,8 @@ struct GameDetailView: View {
         }
         .navigationBarBackButtonHidden(true)
         .sheet(item: $goalieUpdate) { goalieUpdate in
-            AddGameView(goalie: goalie, goalieUpdate: goalieUpdate)
+            let isEdit = goalieUpdate.opponent.trimmingCharacters(in: .whitespacesAndNewlines) != ""
+            AddGameView(goalie: goalie, goalieUpdate: goalieUpdate, isEditMode: isEdit)
                 .presentationDetents([.fraction(0.50)])
             
         }
