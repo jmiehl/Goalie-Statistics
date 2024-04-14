@@ -26,13 +26,13 @@ struct GoalieCardView: View {
                 HStack(alignment: .center, spacing: 13) {
                     Spacer()
                     
-                    StatBubbleView(title: "Shots", stat: "30", startColor: Color("Navy"), endColor: Color("Sky Blue"))
+                    StatBubbleView(title: "Shots", stat: String(goalie.shots), startColor: Color("Navy"), endColor: Color("Sky Blue"))
                     
-                    StatBubbleView(title: "Saves", stat: "28", startColor: Color("Navy"), endColor: Color("Sky Blue"))
+                    StatBubbleView(title: "Saves", stat: String(goalie.saves), startColor: Color("Navy"), endColor: Color("Sky Blue"))
                     
-                    StatBubbleView(title: "Save %", stat: "93.3", startColor: Color("Navy"), endColor: Color("Sky Blue"))
+                    StatBubbleView(title: "Save %", stat: "\(String(format: "%.1f", goalie.savePercentage * 100))", startColor: Color("Navy"), endColor: Color("Sky Blue"))
                     
-                    StatBubbleView(title: "Goals", stat: "2", startColor: Color("Navy"), endColor: Color("Sky Blue"))
+                    StatBubbleView(title: "Goals", stat: String(goalie.goals), startColor: Color("Navy"), endColor: Color("Sky Blue"))
                     Spacer()
                     
                     

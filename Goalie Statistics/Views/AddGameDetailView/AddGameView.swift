@@ -224,6 +224,12 @@ struct AddGameView: View {
                     Spacer()
                     Button(isEditMode ? "Save" : "Add Game") {
                         
+                        
+                        // keep track of key stat differences
+                        let goalsDifference = goals - goalieUpdate.goals
+                        let shotsDifference = shots - goalieUpdate.shots
+                        let savesDifference = saves - goalieUpdate.saves
+                        
                         goalieUpdate.opponent = opponent
                         goalieUpdate.shots = shots
                         goalieUpdate.goals = goals
@@ -232,6 +238,17 @@ struct AddGameView: View {
                         
                         if !isEditMode {
                             goalie.games.insert(goalieUpdate, at: 0)
+                            
+                            try? context.save()
+                            
+                            // update stats
+                            StatHelper.gameAdded(goalie: goalie, goalieUpdate: goalieUpdate)
+                        } else {
+                            // edit project update
+                            
+                            //update stats
+                            StatHelper.gameEdited(goalie: goalie, shotsDifference: shotsDifference, saveDifference: savesDifference, goalsDifference: goalsDifference)
+                            
                         }
 
                         dismiss()
@@ -262,6 +279,12 @@ struct AddGameView: View {
                 goalie.games.removeAll {u in
                     u.id == goalieUpdate.id
                 }
+                //force a swift data save
+                try? context.save()
+                
+                // delete update
+                StatHelper.gameDeleted(goalie: goalie, goalieUpdate: goalieUpdate)
+                
                 dismiss()
             }
         }
