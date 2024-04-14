@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import TelemetryClient
 
 
 struct AddGoalieView: View {
@@ -54,6 +55,7 @@ struct AddGoalieView: View {
                             
                             //save the goalie
                             context.insert(goalie)
+                            TelemetryManager.send("added new goalie")
                         }
                         // dismiss the page
                             

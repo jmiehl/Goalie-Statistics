@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import TelemetryClient
 
 struct GoalieListView: View {
     
@@ -101,6 +102,9 @@ struct GoalieListView: View {
                 
             }
         }
+        .onAppear(perform: {
+            TelemetryManager.send("Visited Goalie home screen")
+        })
     }
 }
     #Preview {

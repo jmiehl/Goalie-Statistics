@@ -18,6 +18,7 @@
 		CF0C9FCF2BB7795C00AFE45E /* GoalieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FCE2BB7795C00AFE45E /* GoalieCardView.swift */; };
 		CF0C9FD12BB846CF00AFE45E /* AddGoalieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FD02BB846CF00AFE45E /* AddGoalieView.swift */; };
 		CF0C9FD62BB9E8D300AFE45E /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C9FD52BB9E8D300AFE45E /* GameDetailView.swift */; };
+		CF96AC712BCC608B006324F6 /* TelemetryClient in Frameworks */ = {isa = PBXBuildFile; productRef = CF96AC702BCC608B006324F6 /* TelemetryClient */; };
 		CFA026A02BBA368E007B6E5D /* GameUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA0269F2BBA368E007B6E5D /* GameUpdateView.swift */; };
 		CFA026A22BBB8118007B6E5D /* AddGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA026A12BBB8118007B6E5D /* AddGameView.swift */; };
 		CFA026A42BBCCC33007B6E5D /* StatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA026A32BBCCC33007B6E5D /* StatHelper.swift */; };
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF96AC712BCC608B006324F6 /* TelemetryClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +150,9 @@
 			dependencies = (
 			);
 			name = "Goalie Statistics";
+			packageProductDependencies = (
+				CF96AC702BCC608B006324F6 /* TelemetryClient */,
+			);
 			productName = "Goalie Statistics";
 			productReference = CF0C9FB12BB592E400AFE45E /* Goalie Statistics.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +181,9 @@
 				Base,
 			);
 			mainGroup = CF0C9FA82BB592E400AFE45E;
+			packageReferences = (
+				CF96AC6F2BCC608B006324F6 /* XCRemoteSwiftPackageReference "SwiftClient" */,
+			);
 			productRefGroup = CF0C9FB22BB592E400AFE45E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -420,6 +428,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF96AC6F2BCC608B006324F6 /* XCRemoteSwiftPackageReference "SwiftClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TelemetryDeck/SwiftClient";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF96AC702BCC608B006324F6 /* TelemetryClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF96AC6F2BCC608B006324F6 /* XCRemoteSwiftPackageReference "SwiftClient" */;
+			productName = TelemetryClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF0C9FA92BB592E400AFE45E /* Project object */;
 }

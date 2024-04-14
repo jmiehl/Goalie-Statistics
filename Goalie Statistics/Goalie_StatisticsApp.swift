@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import TelemetryClient
 
 @main
 struct Goalie_StatisticsApp: App {
@@ -16,4 +17,12 @@ struct Goalie_StatisticsApp: App {
                 .modelContainer(for: [Goalie.self, GoalieUpdate.self])
         }
     }
+    
+    init() {
+            let configuration = TelemetryManagerConfiguration(
+                appID: "FD1470A7-6F83-4AAA-B696-9AB82A44CBAA")
+            TelemetryManager.initialize(with: configuration)
+        
+            TelemetryManager.send("applicationDidFinishLaunching")
+        }
 }
